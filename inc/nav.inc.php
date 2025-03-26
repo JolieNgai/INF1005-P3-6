@@ -22,8 +22,9 @@
      <li class = "nav-item">
         <a class ="nav-link" href="">News</a> <!-- Add in link for this page -->
      </li>
+<!-- phpBB forum -->
      <li class = "nav-item">
-        <a class ="nav-link" href="">Forum</a> <!-- Add in link for this page -->
+        <a class ="nav-link" href="/phpbb/">Forum</a>
      </li>
 
      <li class = "nav-item">
