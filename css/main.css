@@ -159,3 +159,12 @@ footer{
     background-color: #90EE90;
     margin-bottom: 20px;
 }
+
+.semiTransparent
+{
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
