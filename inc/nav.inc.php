@@ -20,7 +20,7 @@
         <a class ="nav-link" href="/aboutus.php">About Us</a> <!-- Add in link for this page -->
      </li>
      <li class = "nav-item">
-        <a class ="nav-link" href="FoodCalc/calculator.php">Calculator</a> <!-- Add in link for this page -->
+        <a class ="nav-link" href="calculator.php">Calculator</a> <!-- Add in link for this page -->
      </li>
      <li class = "nav-item">
         <a class ="nav-link" href="News/news.php">News</a> <!-- Add in link for this page -->

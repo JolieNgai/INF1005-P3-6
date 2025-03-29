@@ -1,5 +1,5 @@
-<?php include('../inc/head.inc.php'); ?>
-<?php include('../inc/nav.inc.php'); ?>
+<?php include('inc/head.inc.php'); ?>
+<?php include('inc/nav.inc.php'); ?>
 
 <link rel="stylesheet" href="../css/main.css">
 
@@ -35,7 +35,7 @@
   </div>
 </div>
 
-<?php include('../inc/footer.inc.php'); ?>
+<?php include('inc/footer.inc.php'); ?>
 
 <!-- Inline JavaScript for AJAX and Modal Behavior -->
 <script>
