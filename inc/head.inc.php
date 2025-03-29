@@ -4,7 +4,10 @@
 rel="stylesheet"
 integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
 crossorigin="anonymous">
-<link rel="stylesheet" href="css/main.css">
+
+<!--CSS-->
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <!--Bootstrap JS-->
 <script defer
