@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Include configuration (API key, base URL, category map)
 include "../inc/news/config.inc.php";
 
@@ -49,7 +53,7 @@ $todaysPick = !empty($allCategoriesArticles) ? $allCategoriesArticles[0] : null;
 <body class="custom-body-background">
     <?php include "../inc/nav.inc.php" ?>
     <?php include "../inc/header.inc.php" ?>
-    
+
 
     <div class="container semiTransparent">
         <div class="row gx-4">
@@ -59,7 +63,7 @@ $todaysPick = !empty($allCategoriesArticles) ? $allCategoriesArticles[0] : null;
                     <div class="card border-0">
                         <h1>Trending</h1>
                         <?php if (!empty($trendingArticles)) : ?>
-                        <img src="<?= !empty($trendingArticles[0]["urlToImage"]) ? $trendingArticles[0]["urlToImage"] : './images/default.jpg'; ?>"
+                        <img src="<?= !empty($trendingArticles[0]["urlToImage"]) ? $trendingArticles[0]["urlToImage"] : '../images/default.jpg'; ?>"
                             class="card-img-top rounded" alt="Big News" height="325px">
                         <div class="card-body">
                             <h3 class="card-title"><?= htmlspecialchars($trendingArticles[0]["title"]); ?></h3>
@@ -68,10 +72,20 @@ $todaysPick = !empty($allCategoriesArticles) ? $allCategoriesArticles[0] : null;
                             </p>
                             <a href="<?= $trendingArticles[0]["url"]; ?>" class="btn btn-primary" target="_blank">Read
                                 More</a>
-                            <form method="POST" action="process_news.php">
-                                <input type="hidden" name="index" value="<?= $i ?>">
-                                <button type="submit" class="btn btn-outline-primary"><i
-                                        class="fas fa-bookmark"></i></button>
+                            <form method="POST" action="process_save_article.php">
+                                <input type="hidden" name="title"
+                                    value="<?= htmlspecialchars($trendingArticles[0]['title']) ?>">
+                                <input type="hidden" name="description"
+                                    value="<?= htmlspecialchars($trendingArticles[0]['description']) ?>">
+                                <input type="hidden" name="url" value="<?= $trendingArticles[0]['url'] ?>">
+                                <input type="hidden" name="image" value="<?= $trendingArticles[0]['urlToImage'] ?>">
+                                <input type="hidden" name="published_at"
+                                    value="<?= $trendingArticles[0]['publishedAt'] ?>">
+
+                                <input type="hidden" name="category" value="<?= $currentCategory ?>">
+                                <button type="submit" class="btn btn-outline-primary">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
                             </form>
                         </div>
                         <?php else : ?>
@@ -84,10 +98,11 @@ $todaysPick = !empty($allCategoriesArticles) ? $allCategoriesArticles[0] : null;
                             <div class="col me-1 ms-1">
                                 <div class="row">
                                     <div class="card border-0">
-                                        <img src="<?= !empty($trendingArticles[$i]["urlToImage"]) ? $trendingArticles[$i]["urlToImage"] : './images/default.jpg'; ?>"
+                                        <img src="<?= !empty($trendingArticles[$i]["urlToImage"]) ? $trendingArticles[$i]["urlToImage"] : '../images/default.jpg'; ?>"
                                             class="card-img-top rounded" alt="Big News" height="122px">
                                         <div class="card-body">
-                                            <h3 class="card-title"><?= htmlspecialchars($trendingArticles[$i]["title"]); ?>
+                                            <h3 class="card-title">
+                                                <?= htmlspecialchars($trendingArticles[$i]["title"]); ?>
                                             </h3>
                                             <p class="card-text">
                                                 <?= !empty($trendingArticles[$i]["description"]) ? htmlspecialchars($trendingArticles[$i]["description"]) : "No description available."; ?>
@@ -113,7 +128,8 @@ $todaysPick = !empty($allCategoriesArticles) ? $allCategoriesArticles[0] : null;
                             <h1>Latest Articles</h1>
                         </div>
                         <div class="col-md-6 text-end mb-2">
-                            <a href="news_list.php?category=<?= urlencode($category); ?>" class="btn btn-primary">More</a>
+                            <a href="news_list.php?category=<?= urlencode($category); ?>"
+                                class="btn btn-primary">More</a>
                         </div>
                     </div>
 
@@ -124,7 +140,7 @@ $todaysPick = !empty($allCategoriesArticles) ? $allCategoriesArticles[0] : null;
                     <div class="card mb-3 border-0" style="max-width: 100%;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="<?= !empty($latestArticles[$i]["urlToImage"]) ? $latestArticles[$i]["urlToImage"] : './images/default.jpg'; ?>"
+                                <img src="<?= !empty($latestArticles[$i]["urlToImage"]) ? $latestArticles[$i]["urlToImage"] : '../images/default.jpg'; ?>"
                                     class="img-fluid rounded" alt="News Image">
                             </div>
                             <div class="col-md-8">
@@ -148,17 +164,17 @@ $todaysPick = !empty($allCategoriesArticles) ? $allCategoriesArticles[0] : null;
                         </div>
                     </div>
                     <?php else : ?>
-                        <p class="text-danger">No articles available.</p>
+                    <p class="text-danger">No articles available.</p>
                     <?php endif; ?>
                     <?php endfor; ?>
                 </div>
-                           
+
             </div>
-            <?php include "../inc/news/sidebar.inc.php"; ?>                 
+            <?php include "../inc/news/sidebar.inc.php"; ?>
         </div>
     </div>
-    <?php include "../inc/footer.inc.php"; ?>                    
-    
+    <?php include "../inc/footer.inc.php"; ?>
+
 </body>
 
 </html>

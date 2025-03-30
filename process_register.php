@@ -1,4 +1,4 @@
-<?php include "inc/head.inc.php"; ?>
+<!-- <?php include "inc/head.inc.php"; ?>
 <?php
 session_start();
 $errorMsg = "";
@@ -110,4 +110,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php include "inc/footer.inc.php"; ?>
 </body>
-</html>
+</html> -->
