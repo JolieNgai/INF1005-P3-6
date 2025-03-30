@@ -46,10 +46,7 @@ function activateMenu() {
         if (link.href.includes(currentPath)) {
             const linkHref = link.getAttribute('href'); 
             
- 
-            if (linkHref === currentPath + "#dogs" && window.location.hash === "#dogs") {
-                link.classList.add('active');
-            } else if (linkHref === currentPath + "#cats" && window.location.hash === "#cats") {
+            if (linkHref === currentPath) {
                 link.classList.add('active');
             } else if (linkHref === currentPath && window.location.hash === "") {
                 link.classList.add('active');
