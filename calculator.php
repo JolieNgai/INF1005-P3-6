@@ -32,7 +32,7 @@
           <div class="invalid-feedback">Please enter the waste percentage.</div>
         </div>
         <div class="form-group mb-3">
-          <label for="cost_per_unit" class="form-label">Cost per Unit ($):</label>
+          <label for="cost_per_unit" class="form-label">Cost per Kg ($):</label>
           <input type="number" step="any" name="cost_per_unit" id="cost_per_unit" class="form-control" required>
           <div class="invalid-feedback">Please enter the cost per unit.</div>
         </div>
