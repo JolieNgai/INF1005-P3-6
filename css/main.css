@@ -168,3 +168,14 @@ footer{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+
+/* CALCULATOR codes */
+.calc-bg
+{
+    background-image: url('/images/Body-Bg.png'); 
+    background-size: cover; /* Make the image cover the entire header */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: #ffffff; /* Set text color to white for better contrast */
+}
