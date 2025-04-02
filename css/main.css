@@ -90,6 +90,12 @@ figure:hover figcaption {
     transform: translateY(0);
 }
 
+main {
+  min-height: 100vh; /* Ensure main content occupies full height */
+  padding-top: 100px; /* Adjust for fixed navbar */
+  margin-bottom: 2rem; /* Prevent overlap with footer */
+}
+
 /* ==========================================================================
    2. Common components (navbar, buttons, etc.)
    ========================================================================== */
@@ -104,6 +110,7 @@ figure:hover figcaption {
     top: 0;
     width: 100%;
     z-index: 1000;
+    
 }
 
 .navbar-brand {
@@ -693,6 +700,8 @@ footer {
   color: white;
   padding: 4rem 0 2rem;
   position: relative;
+  margin-top: 3rem;
+  z-index: 1;
 }
 
 footer h3 {
