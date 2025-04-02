@@ -253,9 +253,7 @@ header {
     transition: color 0.3s ease;
 }
 
-/* ==========================================================================
-   4. Calculator page styles
-   ========================================================================== */
+/* CALCULATOR CODES */
 
 body.calc-bg {
     padding-top: 80px; /* Create space for fixed navbar */
@@ -494,9 +492,8 @@ body.calc-bg {
 
 
 /* CALCULATOR codes */
-body.calc-bg {
-    background: url('/images/Body-Bg.png') no-repeat center center;
-    background-size: cover;
+body.calc-bg { 
+    color: #fff;
   }
   
 
@@ -526,21 +523,9 @@ body.calc-bg {
   
   /* Background for the calculator page */
   body.calc-bg {
-    background: url('/images/Body-Bg.png') no-repeat center center;
-    background-size: cover;
+    color: #fff;
   }
-  
-  /* Main Container for Two-Panel Layout */
-  .calculator-container {
-    display: flex;
-    width: 900px; /* Adjust to desired width */
-    min-height: 500px; /* Adjust to desired height */
-    margin: 40px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
+
   
   /* Left Panel - Form */
   .calc-left {
@@ -601,8 +586,7 @@ body.calc-bg {
   /* Right Panel - Calculation Results */
   .calc-right {
     flex: 1;
-    background-color: #85d885; 
-    color: #fff;
+    background-color: #7cc97c; 
     padding: 40px 30px;
     display: flex;
     justify-content: center;
@@ -613,7 +597,7 @@ body.calc-bg {
   /* Results Container */
   .results-container {
     max-width: 300px;
-    text-align: center;
+    text-align: left;
   }
   
   .results-container h3 {
