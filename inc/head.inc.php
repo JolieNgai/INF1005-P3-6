@@ -17,4 +17,3 @@ crossorigin="anonymous">
 </script>
 
 <!-- Custom JS -->
-<script defer src="js/main.js"></script>

@@ -1,6 +1,6 @@
 <?php
 // NewsAPI Endpoint and API Key (Replace with your actual API key)
-$apiKey = "6d268065fd9648d5b6978af5891eb0c9";
+$apiKey = "55f5392c64e04d2db939d1a862863494";
 $apiBaseURL = "https://newsapi.org/v2/everything?q=";
 
 // Keyword variables

@@ -1,30 +1,31 @@
 <?php
 // Function to fetch news via cURL
-function fetchNews($category, $sortBy = 'publishedAt')
-{
-    global $apiKey, $apiBaseURL, $categoryMap;
-    $query = isset($categoryMap[$category]) ? $categoryMap[$category] : $categoryMap["All"];
-    $apiURL = "{$apiBaseURL}" . urlencode($query) . "&sortBy=$sortBy&language=en&pageSize=100&apiKey={$apiKey}";
+function fetchNews($category, $sortBy = 'publishedAt') {
+    global $API_KEY, $BASE_URL, $categoryMap, $apiErrorMessage;
+
+    $q = $categoryMap[$category] ?? "";
+    $url = "$BASE_URL?q=$q&sortBy=$sortBy&apiKey=$API_KEY";
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $apiURL);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    
-    // Add the required User-Agent header
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        "User-Agent: MyNewsApp/1.0 (https://mywebsite.com)"  
-    ]);
-
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($ch);
-
-    if (curl_errno($ch)) {
-        return ["error" => "cURL Error: " . curl_error($ch)];
-    }
-
     curl_close($ch);
+
     $data = json_decode($response, true);
 
-    return $data["articles"] ?? ["error" => "No news found for {$category}."];
+    echo "<script>console.log(" . json_encode($data) . ");</script>";
+
+    echo json_encode($data);
+
+
+    // If any API error occurs
+    if (isset($data['status']) && $data['status'] === 'error') {
+        $apiErrorMessage = $data['message'] ?? "An unknown API error occurred.";
+        return [];
+    }
+
+    return $data["articles"] ?? [];
 }
+
 ?>
