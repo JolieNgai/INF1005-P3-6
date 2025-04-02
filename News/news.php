@@ -43,67 +43,9 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
 <head>
     <title>Food 4 Thought</title>
     <?php include "../inc/head.inc.php"; ?>
+    <link rel="stylesheet" href="../css/news.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <style>
-    .newsImg {
-        object-fit: cover;
-        width: 100%;
-        height: 200px;
-    }
-
-    .card-body {
-        background-color: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(4px);
-        border-radius: 0 0 10px 10px;
-    }
-
-    .container.semiTransparent {
-        background-color: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(5px);
-        padding: 2rem;
-        border-radius: 12px;
-    }
-
-    .btn-primary {
-        background-color: #198754;
-        border: none;
-    }
-
-    .btn-outline-primary {
-        border-color: #198754;
-        color: #198754;
-    }
-
-    .btn-outline-primary:hover {
-        background-color: #198754;
-        color: white;
-    }
-
-    /* Override Bootstrap .nav-pills */
-    .nav-pills .nav-link {
-        color: #198754;
-        border: 1px solid #198754;
-        margin: 0 4px;
-    }
-
-    .nav-pills .nav-link:hover {
-        background-color: #198754;
-        color: white;
-    }
-
-    .nav-pills .nav-link.active {
-        background-color: #198754;
-        color: white;
-        border-color: #198754;
-    }
-
-
-    @media (max-width: 768px) {
-        .newsImg {
-            height: 160px;
-        }
-    }
-    </style>
+    <script defer src="/js/news.js"></script>
 </head>
 
 <body class="custom-body-background">
@@ -246,48 +188,6 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
     </div>
 
     <?php include "../inc/footer.inc.php"; ?>
-
-    <script>
-    $(document).ready(function() {
-        $(".save-article-form").on("submit", function(e) {
-            e.preventDefault();
-            const form = $(this);
-            const btn = form.find(".save-btn i");
-            const originalIcon = btn.attr("class");
-
-            // Show loading spinner
-            btn.attr("class", "fas fa-spinner fa-spin");
-
-            $.post("process_save_article.php", form.serialize(), function(response) {
-                if (response.trim() === "exists") {
-                    btn.attr("class", "fas fa-exclamation-circle text-warning");
-                    btn.closest("button").after(
-                        '<span class="text-warning ms-2 small">Exist!</span>');
-                } else if (response.trim() === "success") {
-                    btn.attr("class", "fas fa-check text-success");
-                } else if (response === "unauthorized") {
-                    btn.attr("class", "fas fa-user-lock text-danger");
-                    btn.closest("button").after(
-                        '<span class="text-danger ms-2 small feedback-msg">Please log in!</span>'
-                    );
-                } else {
-                    btn.attr("class", "fas fa-times text-danger");
-                }
-
-                // Revert to original after 2.5s
-                setTimeout(() => {
-                    form.find("span.text-warning").remove();
-                    btn.attr("class", originalIcon);
-                }, 2500);
-            }).fail(() => {
-                btn.attr("class", "fas fa-times text-danger");
-                setTimeout(() => {
-                    btn.attr("class", originalIcon);
-                }, 2000);
-            });
-        });
-    });
-    </script>
 
 </body>
 

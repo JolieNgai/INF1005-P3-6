@@ -1,0 +1,37 @@
+.btn-primary {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-primary:hover {
+    background-color: #157347;
+    border-color: #146c43;
+}
+
+.btn-outline-primary {
+    border-color: #198754;
+    color: #198754;
+}
+
+.btn-outline-primary:hover {
+    background-color: #198754;
+    color: white;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.95rem;
+}
+
+.feedback-msg {
+    font-size: 0.75rem;
+}
