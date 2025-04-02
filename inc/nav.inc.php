@@ -32,6 +32,9 @@ if (session_status() === PHP_SESSION_NONE) {
      <li class = "nav-item">
         <a class ="nav-link" href="/News/news.php">News</a> <!-- Add in link for this page -->
      </li>
+     <li class = "nav-item">
+         <a class ="nav-link" href="/phpbb/">Forum</a>
+      </li>
      </ul>
 <ul class="navbar-nav ms-auto">
 <!-- phpBB forum -->
