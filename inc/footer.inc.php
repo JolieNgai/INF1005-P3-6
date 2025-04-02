@@ -9,23 +9,14 @@
                 <div class="col-lg-2 col-md-6 mb-4">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-angle-right me-2"></i>Home</a></li>
-                        <li><a href="#FoodShortage"><i class="fas fa-angle-right me-2"></i>About</a></li>
-                        <li><a href="#Causes"><i class="fas fa-angle-right me-2"></i>Prevention</a></li>
-                        <li><a href="#statistics"><i class="fas fa-angle-right me-2"></i>Statistics</a></li>
-                        <li><a href="#take-action"><i class="fas fa-angle-right me-2"></i>Take Action</a></li>
+                        <li><a href="#index.phps"><i class="fas fa-angle-right me-2"></i>Home</a></li>
+                        <li><a href="aboutus.php"><i class="fas fa-angle-right me-2"></i>About</a></li>
+                        <li><a href="index.php#Causes"><i class="fas fa-angle-right me-2"></i>Prevention</a></li>
+                        <li><a href="index.php#statistics"><i class="fas fa-angle-right me-2"></i>Statistics</a></li>
+                        <li><a href="index.php#take-action"><i class="fas fa-angle-right me-2"></i>Take Action</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-angle-right me-2"></i>Blog</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right me-2"></i>Research Papers</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right me-2"></i>Volunteer Opportunities</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right me-2"></i>Partner Organizations</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right me-2"></i>FAQs</a></li>
-                    </ul>
-                </div>
+               
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
