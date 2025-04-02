@@ -35,7 +35,7 @@ $paginationUrlBase = "news_list.php?category=" . urlencode($currentCategory);
     <?php include "../inc/head.inc.php"; ?>
     <link rel="stylesheet" href="../css/news_list.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src="/js/main.js"></script>
 </head>
 
 <body class="custom-body-background">

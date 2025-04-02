@@ -45,7 +45,7 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
     <?php include "../inc/head.inc.php"; ?>
     <link rel="stylesheet" href="../css/news.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script defer src="js/news.js"></script>
+    <script defer src="/js/news.js"></script>
 </head>
 
 <body class="custom-body-background">
