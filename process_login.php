@@ -70,6 +70,9 @@ function authenticateUser() {
             $_SESSION["fname"] = $fname;
             $_SESSION["lname"] = $lname;
             $_SESSION["username"] = $fname; 
+
+            header("Location: index.php");
+            exit();
         } else {
             $errorMsg = "Email not found or password doesn't match.";
             $success = false;
