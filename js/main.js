@@ -4,38 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-function registerEventListeners() {
-    const images = document.getElementsByClassName("img-thumbnail");
-
-    for (let i = 0; i < images.length; i++) {
-        images[i].addEventListener("click", handleImageClick);
-    }
-}
-
-function handleImageClick() {
-    const existingPopup = document.querySelector(".img-popup");
-    if (existingPopup) {
-        existingPopup.remove();
-    } else {
-        createImagePopup(this);
-    }
-}
-
-function createImagePopup(img) {
-    const popup = document.createElement("span");
-    popup.classList.add("img-popup"); 
-
-    const popupImage = document.createElement("img");
-    popupImage.setAttribute("src", img.src.replace("_small", "_large"));
-
-    popup.appendChild(popupImage);
-
-    img.insertAdjacentElement("afterend", popup);
-
-    popup.addEventListener("click", function() {
-        popup.remove(); 
-    });
-}
 
 function activateMenu() {
     const navLinks = document.querySelectorAll('nav a'); 
@@ -322,4 +290,89 @@ document.querySelectorAll(".close-btn").forEach(closeBtn => {
 document.addEventListener("DOMContentLoaded", function() {
     const startQuizButton2 = document.getElementById("startQuiz2Btn");
     startQuizButton2.addEventListener("click", startQuiz2); // Add event listener for Quiz 2 button
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+ // Progress Bar on Scroll
+ window.onscroll = function() {updateProgressBar()};
+
+ function updateProgressBar() {
+     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+     const scrolled = (winScroll / height) * 100;
+     document.getElementById("progressBar").style.width = scrolled + "%";
+ }
+
+ // Animation on Scroll
+ const fadeElements = document.querySelectorAll('.fade-in');
+
+ function checkFade() {
+     fadeElements.forEach(element => {
+         const elementTop = element.getBoundingClientRect().top;
+         const elementVisible = 150;
+         if (elementTop < window.innerHeight - elementVisible) {
+             element.classList.add('visible');
+         }
+     });
+ }
+
+ window.addEventListener('scroll', checkFade);
+ checkFade(); // Initial check on page load
+
+ // Animated Counter
+ const counters = document.querySelectorAll('.count');
+ const speed = 200;
+
+ const counterSection = document.querySelector('.counter-section');
+ let counterActivated = false;
+
+ window.addEventListener('scroll', () => {
+     if (counterSection.getBoundingClientRect().top < window.innerHeight - 100 && !counterActivated) {
+         counterActivated = true;
+         
+         counters.forEach(counter => {
+             const updateCount = () => {
+                 const target = parseInt(counter.getAttribute('data-count'));
+                 const count = parseInt(counter.innerText);
+                 const increment = target / speed;
+
+                 if (count < target) {
+                     counter.innerText = Math.ceil(count + increment);
+                     setTimeout(updateCount, 10);
+                 } else {
+                     counter.innerText = target;
+                 }
+             };
+             updateCount();
+         });
+     }
+ });
+
+ // Smooth scrolling for anchor links
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+     anchor.addEventListener('click', function (e) {
+         e.preventDefault();
+
+         const targetId = this.getAttribute('href');
+         const targetElement = document.querySelector(targetId);
+
+         if (targetElement) {
+             window.scrollTo({
+                 top: targetElement.offsetTop - 70,
+                 behavior: 'smooth'
+             });
+         }
+     });
+ });
+
+ // Navbar Shrink on Scroll
+ window.addEventListener('scroll', function() {
+     const navbar = document.querySelector('.navbar');
+     if (window.scrollY > 50) {
+         navbar.style.padding = '10px 0';
+     } else {
+         navbar.style.padding = '15px 0';
+     }
+ });
 });

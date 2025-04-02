@@ -1,75 +1,398 @@
-section h2{
-    text-decoration-line: underline;
-}
-figure img{
-    border-style: double;
-    border-color: black;
+/* ==========================================================================
+   TABLE OF CONTENTS
+   ==========================================================================
+   1. Variables and base styles
+   2. Common components (navbar, buttons, etc.)
+   3. Homepage styles
+   4. Calculator page styles
+   5. Quiz and modal styles
+   6. Other page-specific styles
+   7. Responsive adjustments
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Variables and base styles
+   ========================================================================== */
+   :root {
+    --primary-color: #2E7D32;
+    --secondary-color: #81C784;
+    --accent-color: #FFC107;
+    --text-color: #333;
+    --light-bg: #F8F9FA;
 }
 
-figure{
-    color: white;
-    display: inline-block;
-    text-align: center;
-    font-style: italic;
-}
-footer{
-    border-top-style: solid;
-    text-align: center;
-    font-style: italic;
-    font-size: smaller;
-}
-.img-popup{
-    position: fixed;          
-    top: 50%;                 
-    left: 50%;                
-    transform: translate(-50%, -50%); 
-    max-width: 90%;           
-    max-height: 90%;         
-    z-index: 1000;           
-    background-color: #fff;   
-    padding: 10px;
-}
-
-.img-popup img {
-    max-width: 100%;  
-    max-height: 100%; 
-    object-fit: contain; 
-}
-.navbar-nav .nav-link.active {
-    color: white;               /* Set the text color when active */
-}
-
-.custom-light-green-background{
-    background-color: #90EE90 !important; /* Light green */
-}
-
-.custom-header-background {
-    background-image: url('/images/Background.jpg'); 
-    background-size: cover; /* Make the image cover the entire header */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    color: #ffffff; /* Set text color to white for better contrast */
-    padding: 50px 0; /* Add padding for better spacing */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: #FBFBF9;
+    overflow-x: hidden;
 }
 
 .custom-body-background {
-    background-image: url('/images/Body-Bg.png'); 
-    background-size: cover; /* Make the image cover the entire header */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    color: #ffffff; /* Set text color to white for better contrast */
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,255,240,0.9) 100%);
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .boxed-paragraph {
-    background-color: #90EE90; /* Light background color */
-    color: black;
-    border: 2px solid #ccc; /* Light border color */
-    padding: 20px; /* Add padding around the text */
-    margin: 20px auto; /* Center the paragraph */
-    max-width: 800px; /* Max width to prevent it from stretching too wide */
-    text-align: justify; /* Align text to make it more compact */
-    border-radius: 10px; /* Optional: rounded corners */
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.boxed-paragraph:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+figure {
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+figure img {
+    width: 100% !important;
+    height: auto;
+    transition: transform 0.5s ease;
+    border-radius: 15px;
+}
+
+figure:hover img {
+    transform: scale(1.05);
+}
+
+figcaption {
+    padding: 15px;
+    background-color: rgba(46,125,50,0.8);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-weight: 500;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+figure:hover figcaption {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   2. Common components (navbar, buttons, etc.)
+   ========================================================================== */
+
+/* Navbar styling */
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    margin: 0 10px;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Common section styling */
+section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+/* Common headings styling */
+section h2 {
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Copyright styling */
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #666;
+}
+
+/* ==========================================================================
+   3. Homepage styles
+   ========================================================================== */
+
+header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/Food-shortage.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Feature boxes */
+.feature-box {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%;
+}
+
+.feature-box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 20px;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.feature-box:hover::before {
+    transform: scale(1);
+}
+
+.feature-box:hover h3, .feature-box:hover p, .feature-box:hover i {
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   4. Calculator page styles
+   ========================================================================== */
+
+body.calc-bg {
+    padding-top: 80px; /* Create space for fixed navbar */
+}
+
+/* Calculator container layout */
+.calculator-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 0 1.5rem;
+}
+
+/* Left panel - Calculator form */
+.calc-left {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calc-left:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.calc-left h2 {
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.calc-left h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Right panel - Results display */
+.calc-right {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calc-right:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.calc-right.results-active {
+    background-color: #E8F5E9;
+}
+
+.results-container h3 {
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.results-container h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(46,125,50,0.2);
+    outline: none;
+}
+
+.calculate-btn {
+    color: white;
+    padding: 10px 25px;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+}
+
+/* Animation for results */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.results-container p {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.results-container p:nth-child(1) { --i: 1; }
+.results-container p:nth-child(2) { --i: 2; }
+.results-container p:nth-child(3) { --i: 3; }
+.results-container p:nth-child(4) { --i: 4; }
+
 /* QUIZ codes */
 /* Basic modal styles */
 /* Modal hidden by default */
@@ -315,4 +638,204 @@ body.calc-bg {
       padding: 20px;
     }
   }
+  /* Progress bar */
+.progress-container {
+  position: fixed;
+  top: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+}
+
+#progressBar {
+  height: 4px;
+  background: var(--accent-color);
+  width: 0%;
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Counter section */
+.counter-section {
+  background: linear-gradient(rgba(46,125,50,0.85), rgba(46,125,50,0.85)), url('/images/RecycleFood.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.counter-box {
+  padding: 30px;
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.counter-box:hover {
+  transform: translateY(-10px);
+}
+
+.counter-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Footer styling */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 4rem 0 2rem;
+  position: relative;
+}
+
+footer h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+footer h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+footer p, footer a {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links li a {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-links li a:hover {
+  transform: translateX(5px);
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-icons li a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+/* ==========================================================================
+ 6. Other page-specific styles
+ ========================================================================== */
+
+/* Add styles for other pages here */
+
+/* ==========================================================================
+ 7. Responsive adjustments
+ ========================================================================== */
+
+@media (max-width: 992px) {
+  .header-content h1 {
+      font-size: 2.5rem;
+  }
   
+  .modal-content {
+      width: 90%;
+      margin: 15% auto;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+      padding: 3rem 0;
+  }
+  
+  .header-content h1 {
+      font-size: 2rem;
+  }
+  
+  .calculator-container {
+      flex-direction: column;
+  }
+  
+  #answerButtons, #answerButtons2 {
+      gap: 8px;
+  }
+  
+  .answer-btn {
+      padding: 10px 15px;
+      font-size: 0.9rem;
+  }
+  
+  #questionText, #questionText2 {
+      font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+      width: 95%;
+      padding: 20px;
+      margin: 20% auto;
+  }
+  
+  .close-btn {
+      top: 10px;
+      right: 15px;
+  }
+}

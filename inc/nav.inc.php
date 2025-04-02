@@ -5,13 +5,12 @@ if (session_status() === PHP_SESSION_NONE) {
 
 ?>
 
-<nav class="navbar navbar-expand-sm bg-secondary custom-light-green-background" data-bs-theme="light">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" data-bs-theme="light">
 
 <a class="navbar-brand" href="/">
-    <div class="logo-image">
-          <img src="/images/Logo.jpg"
-          height = "60">
-    </div>
+<a class="navbar-brand" href="index.php">
+                <i class="fas fa-seedling me-2"></i>Food 4 Thought
+            </a>
 </a>
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 

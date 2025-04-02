@@ -1,5 +1,11 @@
-<header class="jumbotron text-center text-light bg-dark rounded-0 custom-header-background">
-        <h1 class="display-4">Welcome to Food 4 Thought!</h1>
-        <h2>Start learning more about Food Shortage today!</h2>
-        </header>
-  
+<!-- Header -->
+<header id="home">
+        <div class="header-content text-center animate__animated animate__fadeIn">
+            <h1 class="animate__animated animate__fadeInDown">Fighting Food Shortage Together</h1>
+            <p class="animate__animated animate__fadeInUp">Learn about the global food crisis and how you can make a difference in your community and beyond.</p>
+            <div class="animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="#take-action" class="btn btn-primary me-3">Take Action Now</a>
+                <a href="#FoodShortage" class="btn btn-outline-light">Learn More</a>
+            </div>
+        </div>
+    </header>
