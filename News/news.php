@@ -79,6 +79,25 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
         color: white;
     }
 
+    /* Override Bootstrap .nav-pills */
+    .nav-pills .nav-link {
+        color: #198754;
+        border: 1px solid #198754;
+        margin: 0 4px;
+    }
+
+    .nav-pills .nav-link:hover {
+        background-color: #198754;
+        color: white;
+    }
+
+    .nav-pills .nav-link.active {
+        background-color: #198754;
+        color: white;
+        border-color: #198754;
+    }
+
+
     @media (max-width: 768px) {
         .newsImg {
             height: 160px;
@@ -246,6 +265,11 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
                         '<span class="text-warning ms-2 small">Exist!</span>');
                 } else if (response.trim() === "success") {
                     btn.attr("class", "fas fa-check text-success");
+                } else if (response === "unauthorized") {
+                    btn.attr("class", "fas fa-user-lock text-danger");
+                    btn.closest("button").after(
+                        '<span class="text-danger ms-2 small feedback-msg">Please log in!</span>'
+                    );
                 } else {
                     btn.attr("class", "fas fa-times text-danger");
                 }

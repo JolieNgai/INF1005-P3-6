@@ -36,14 +36,14 @@
                     </p>
                     <div class="d-flex gap-2">
                         <a href="<?= htmlspecialchars($article['url']); ?>" class="btn btn-sm btn-primary">Read More</a>
-                        <form method="POST" action="process_save_article.php">
+                        <form method="POST" action="process_save_article.php" class="save-article-form d-inline">
                             <input type="hidden" name="title" value="<?= htmlspecialchars($article['title']); ?>">
                             <input type="hidden" name="description" value="<?= htmlspecialchars($article['description']); ?>">
                             <input type="hidden" name="url" value="<?= htmlspecialchars($article['url']); ?>">
                             <input type="hidden" name="image" value="<?= htmlspecialchars($article['urlToImage']); ?>">
                             <input type="hidden" name="published_at" value="<?= htmlspecialchars($article['publishedAt']); ?>">
                             <input type="hidden" name="category" value="<?= htmlspecialchars($currentCategory ?? 'All'); ?>">
-                            <button type="submit" class="btn btn-sm btn-outline-primary">
+                            <button type="submit" class="btn btn-sm btn-outline-primary save-btn">
                                 <i class="fas fa-bookmark"></i>
                             </button>
                         </form>
@@ -91,14 +91,14 @@
         <p><?= htmlspecialchars($todaysPick['description'] ?? 'No description available.'); ?></p>
         <div class="d-flex gap-2">
             <a href="<?= htmlspecialchars($todaysPick['url']); ?>" class="btn btn-sm btn-primary">Read More</a>
-            <form method="POST" action="process_save_article.php">
+            <form method="POST" action="process_save_article.php" class="save-article-form d-inline">
                 <input type="hidden" name="title" value="<?= htmlspecialchars($todaysPick['title']); ?>">
                 <input type="hidden" name="description" value="<?= htmlspecialchars($todaysPick['description']); ?>">
                 <input type="hidden" name="url" value="<?= htmlspecialchars($todaysPick['url']); ?>">
                 <input type="hidden" name="image" value="<?= htmlspecialchars($todaysPick['urlToImage']); ?>">
                 <input type="hidden" name="published_at" value="<?= htmlspecialchars($todaysPick['publishedAt']); ?>">
                 <input type="hidden" name="category" value="<?= htmlspecialchars($currentCategory ?? 'All'); ?>">
-                <button type="submit" class="btn btn-sm btn-outline-primary">
+                <button type="submit" class="btn btn-sm btn-outline-primary save-btn">
                     <i class="fas fa-bookmark"></i>
                 </button>
             </form>
@@ -108,5 +108,6 @@
         <?php endif; ?>
     </div>
 </div>
+
 
 <!-- Sidebar ends -->

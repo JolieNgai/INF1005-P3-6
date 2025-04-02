@@ -14,5 +14,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["article_id"], $_SESSI
     $conn->close();
 }
 
-header("Location: saved_articles.php");
+header("Location: saved_article.php");
 exit();

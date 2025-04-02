@@ -58,7 +58,7 @@ $conn->close();
                                     <small class="text-muted">Published on <?= date("F j, Y", strtotime($article['published_at'])) ?></small>
                                 </p>
                                 <a href="<?= htmlspecialchars($article['url']) ?>" class="btn btn-primary" target="_blank">Read More</a>
-                                <form method="POST" action="delete_article.php" class="d-inline">
+                                <form method="POST" action="../News/delete_article.php" class="d-inline">
                                     <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
