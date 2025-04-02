@@ -33,48 +33,9 @@ $paginationUrlBase = "news_list.php?category=" . urlencode($currentCategory);
 <head>
     <title>Food 4 Thought</title>
     <?php include "../inc/head.inc.php"; ?>
+    <link rel="stylesheet" href="../css/news_list.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <style>
-    <style>.btn-primary {
-        background-color: #198754;
-        border-color: #198754;
-    }
-
-    .btn-primary:hover {
-        background-color: #157347;
-        border-color: #146c43;
-    }
-
-    .btn-outline-primary {
-        border-color: #198754;
-        color: #198754;
-    }
-
-    .btn-outline-primary:hover {
-        background-color: #198754;
-        color: white;
-    }
-
-    .pagination .page-item.active .page-link {
-        background-color: #198754;
-        border-color: #198754;
-    }
-
-    .card-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-    }
-
-    .card-text {
-        font-size: 0.95rem;
-    }
-
-    .feedback-msg {
-        font-size: 0.75rem;
-    }
-    </style>
-
-    </style>
+    <script defer src="js/main.js"></script>
 </head>
 
 <body class="custom-body-background">
@@ -157,48 +118,6 @@ $paginationUrlBase = "news_list.php?category=" . urlencode($currentCategory);
     </div>
 
     <?php include "../inc/footer.inc.php"; ?>
-
-    <script>
-    $(document).ready(function() {
-        $(".save-article-form").on("submit", function(e) {
-            e.preventDefault();
-            const form = $(this);
-            const btn = form.find(".save-btn i");
-            const originalIcon = btn.attr("class");
-
-            // Show loading spinner
-            btn.attr("class", "fas fa-spinner fa-spin");
-
-            $.post("process_save_article.php", form.serialize(), function(response) {
-                if (response.trim() === "exists") {
-                    btn.attr("class", "fas fa-exclamation-circle text-warning");
-                    btn.closest("button").after(
-                        '<span class="text-warning ms-2 small">Exist!</span>');
-                } else if (response.trim() === "success") {
-                    btn.attr("class", "fas fa-check text-success");
-                } else if (response === "unauthorized") {
-                    btn.attr("class", "fas fa-user-lock text-danger");
-                    btn.closest("button").after(
-                        '<span class="text-danger ms-2 small feedback-msg">Please log in!</span>'
-                    );
-                } else {
-                    btn.attr("class", "fas fa-times text-danger");
-                }
-
-                // Revert to original after 2.5s
-                setTimeout(() => {
-                    form.find("span.text-warning").remove();
-                    btn.attr("class", originalIcon);
-                }, 2500);
-            }).fail(() => {
-                btn.attr("class", "fas fa-times text-danger");
-                setTimeout(() => {
-                    btn.attr("class", originalIcon);
-                }, 2000);
-            });
-        });
-    });
-    </script>
 </body>
 
 </html>
