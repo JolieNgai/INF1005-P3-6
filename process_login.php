@@ -1,4 +1,8 @@
 <?php
+require_once "db_connect.php";
+
+session_unset();
+session_destroy();
 session_start();
 $errorMsg = "";
 $success = true;
@@ -46,23 +50,17 @@ function authenticateUser() {
     }
 
     // Connect to database
-    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-
-    if ($conn->connect_error) {
-        $errorMsg = "Connection failed: " . $conn->connect_error;
-        $success = false;
-        return;
-    }
+    $conn = getDbConnection();
 
     // Prepare SQL statement
-    $stmt = $conn->prepare("SELECT fname, lname, password FROM projectdatabase WHERE email=?");
+    $stmt = $conn->prepare("SELECT member_id, fname, lname, password FROM projectdatabase WHERE email=?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
         // Fetch user data
-        $stmt->bind_result($fname, $lname, $pwd_hashed);
+        $stmt->bind_result($memberId,$fname, $lname, $pwd_hashed);
         $stmt->fetch();
 
         // Verify password
@@ -70,9 +68,7 @@ function authenticateUser() {
             $_SESSION["fname"] = $fname;
             $_SESSION["lname"] = $lname;
             $_SESSION["username"] = $fname; 
-
-            header("Location: index.php");
-            exit();
+            $_SESSION["user_id"] = $memberId;
         } else {
             $errorMsg = "Email not found or password doesn't match.";
             $success = false;

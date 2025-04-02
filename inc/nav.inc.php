@@ -31,18 +31,21 @@ if (session_status() === PHP_SESSION_NONE) {
         <a class ="nav-link" href="calculator.php">Calculator</a> <!-- Add in link for this page -->
      </li>
      <li class = "nav-item">
-        <a class ="nav-link" href="News/news.php">News</a> <!-- Add in link for this page -->
+        <a class ="nav-link" href="/News/news.php">News</a> <!-- Add in link for this page -->
      </li>
      </ul>
 <ul class="navbar-nav ms-auto">
 <!-- phpBB forum -->
 <?php if (isset($_SESSION['username'])): ?>
     <li class="nav-item">
+        <a class="nav-link" href="/logout.php">Log out</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/News/saved_article.php">Saved Article</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="#">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></a>
     </li>
-    <li class = "nav-item">
-        <a class ="nav-link" href="/phpbb/">Forum</a>
-     </li>
 <?php else: ?>
     <li class="nav-item">
         <a class="nav-link" href="/register.php">Register</a>
