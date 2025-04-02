@@ -281,7 +281,7 @@ session_start();
                             </div>
 
                             <div class="mt-5">
-                                <a href="" class="btn btn-primary btn-lg animate__animated animate__pulse animate__infinite">
+                                <a href="/register.php" class="btn btn-primary btn-lg animate__animated animate__pulse animate__infinite">
                                     <i class="fas fa-hand-holding-heart me-2"></i>Register as Member!
                                 </a>
                             </div>
