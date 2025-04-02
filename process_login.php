@@ -69,6 +69,7 @@ function authenticateUser() {
         if (password_verify($password, $pwd_hashed)) {
             $_SESSION["fname"] = $fname;
             $_SESSION["lname"] = $lname;
+            $_SESSION["username"] = $fname; 
         } else {
             $errorMsg = "Email not found or password doesn't match.";
             $success = false;
