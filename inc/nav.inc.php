@@ -35,6 +35,9 @@ if (session_status() === PHP_SESSION_NONE) {
      </li>
 <!-- phpBB forum -->
 <?php if (isset($_SESSION['username'])): ?>
+    <li class = "nav-item">
+        <a class ="nav-link" href="/phpbb/">Forum</a>
+     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></a>
     </li>
