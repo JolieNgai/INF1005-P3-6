@@ -11,10 +11,6 @@
     <?php
     include "inc/nav.inc.php";
     ?>
-    <?php
-    include "inc/header.inc.php";
-
-    ?>
     <main class="container">
         
     <section id="AboutUs">
