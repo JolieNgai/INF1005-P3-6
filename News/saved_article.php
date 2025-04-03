@@ -60,7 +60,7 @@ $conn->close();
                                 <a href="<?= htmlspecialchars($article['url']) ?>" class="btn btn-primary" target="_blank">Read More</a>
                                 <form method="POST" action="../News/delete_article.php" class="d-inline">
                                     <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button aria-label="Delete article" type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </div>
                         </div>

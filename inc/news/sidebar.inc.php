@@ -43,7 +43,7 @@
                             <input type="hidden" name="image" value="<?= htmlspecialchars($article['urlToImage']); ?>">
                             <input type="hidden" name="published_at" value="<?= htmlspecialchars($article['publishedAt']); ?>">
                             <input type="hidden" name="category" value="<?= htmlspecialchars($currentCategory ?? 'All'); ?>">
-                            <button type="submit" class="btn btn-sm btn-outline-primary save-btn">
+                            <button aria-label="Save article" type="submit" class="btn btn-sm btn-outline-primary save-btn">
                                 <i class="fas fa-bookmark"></i>
                             </button>
                         </form>
@@ -60,16 +60,16 @@
     <div class="card-body rounded text-center" style="background-color: rgba(255,255,255,0.85);">
         <h2 class="card-title">Stay Connected</h2>
         <div class="d-flex justify-content-center flex-wrap gap-2 mt-2">
-            <a href="#" class="btn btn-light rounded-circle" style="width: 40px; height: 40px;">
+            <a href="#" aria-label="Facebook" class="btn btn-light rounded-circle" style="width: 40px; height: 40px;">
                 <i class="fab fa-facebook-f text-secondary"></i>
             </a>
-            <a href="#" class="btn btn-light rounded-circle" style="width: 40px; height: 40px;">
+            <a href="#" aria-label="X" class="btn btn-light rounded-circle" style="width: 40px; height: 40px;">
                 <i class="fab fa-x text-secondary"></i>
             </a>
-            <a href="#" class="btn btn-light rounded-circle" style="width: 40px; height: 40px;">
+            <a href="#" aria-label="Instagram" class="btn btn-light rounded-circle" style="width: 40px; height: 40px;">
                 <i class="fab fa-instagram text-secondary"></i>
             </a>
-            <a href="#" class="btn btn-light rounded-circle" style="width: 40px; height: 40px;">
+            <a href="#" aria-label="Google" class="btn btn-light rounded-circle" style="width: 40px; height: 40px;">
                 <i class="fab fa-google text-secondary"></i>
             </a>
         </div>
@@ -98,7 +98,7 @@
                 <input type="hidden" name="image" value="<?= htmlspecialchars($todaysPick['urlToImage']); ?>">
                 <input type="hidden" name="published_at" value="<?= htmlspecialchars($todaysPick['publishedAt']); ?>">
                 <input type="hidden" name="category" value="<?= htmlspecialchars($currentCategory ?? 'All'); ?>">
-                <button type="submit" class="btn btn-sm btn-outline-primary save-btn">
+                <button aria-label="Save article" type="submit" class="btn btn-sm btn-outline-primary save-btn">
                     <i class="fas fa-bookmark"></i>
                 </button>
             </form>

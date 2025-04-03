@@ -79,7 +79,7 @@ $paginationUrlBase = "news_list.php?category=" . urlencode($currentCategory);
                                         <input type="hidden" name="published_at"
                                             value="<?= $article['publishedAt']; ?>">
                                         <input type="hidden" name="category" value="<?= $currentCategory; ?>">
-                                        <button type="submit" class="btn btn-outline-primary btn-sm save-btn">
+                                        <button aria-label="Save article" type="submit" class="btn btn-outline-primary btn-sm save-btn">
                                             <i class="fas fa-bookmark"></i>
                                         </button>
                                     </form>

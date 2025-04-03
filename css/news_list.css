@@ -1,37 +1,55 @@
+:root {
+    --primary-green: #0b3823;
+    --primary-green-dark: #0c271a;
+    --primary-green-darker: #1c2722;
+}
+
+/* Solid primary button */
 .btn-primary {
-    background-color: #198754;
-    border-color: #198754;
-}
-
-.btn-primary:hover {
-    background-color: #157347;
-    border-color: #146c43;
-}
-
-.btn-outline-primary {
-    border-color: #198754;
-    color: #198754;
-}
-
-.btn-outline-primary:hover {
-    background-color: #198754;
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
     color: white;
 }
 
-.pagination .page-item.active .page-link {
-    background-color: #198754;
-    border-color: #198754;
+.btn-primary:hover {
+    background-color: var(--primary-green-dark);
+    border-color: var(--primary-green-darker);
+    color: white;
 }
 
+/* Outline primary button */
+.btn-outline-primary {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+/* Pagination active page */
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    color: white;
+}
+
+/* Title inside cards */
 .card-title {
     font-size: 1.1rem;
     font-weight: 600;
+    color: #212529; /* default dark text */
 }
 
+/* Body text inside cards */
 .card-text {
     font-size: 0.95rem;
+    color: #343a40; /* slightly lighter dark */
 }
 
+/* Small feedback messages */
 .feedback-msg {
     font-size: 0.75rem;
+    color: #6c757d; /* muted text color */
 }

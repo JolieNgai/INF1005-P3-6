@@ -83,7 +83,7 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
                                 <input type="hidden" name="published_at"
                                     value="<?= $trendingArticles[0]['publishedAt']; ?>">
                                 <input type="hidden" name="category" value="<?= $currentCategory; ?>">
-                                <button type="submit" class="btn btn-outline-primary btn-sm ms-2 save-btn">
+                                <button aria-label="Save article" type="submit" class="btn btn-outline-primary btn-sm ms-2 save-btn">
                                     <i class="fas fa-bookmark"></i>
                                 </button>
                             </form>
@@ -120,7 +120,7 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
                                         <input type="hidden" name="published_at"
                                             value="<?= $trendingArticles[$i]['publishedAt']; ?>">
                                         <input type="hidden" name="category" value="<?= $currentCategory; ?>">
-                                        <button type="submit" class="btn btn-outline-primary btn-sm save-btn">
+                                        <button aria-label="Save article" type="submit" class="btn btn-outline-primary btn-sm save-btn">
                                             <i class="fas fa-bookmark"></i>
                                         </button>
                                     </form>
@@ -172,7 +172,7 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
                                             <input type="hidden" name="published_at"
                                                 value="<?= $article['publishedAt']; ?>">
                                             <input type="hidden" name="category" value="<?= $currentCategory; ?>">
-                                            <button type="submit" class="btn btn-outline-primary btn-sm save-btn">
+                                            <button aria-label="Save article" type="submit" class="btn btn-outline-primary btn-sm save-btn">
                                                 <i class="fas fa-bookmark"></i>
                                             </button>
                                         </form>

@@ -17,39 +17,48 @@
     border-radius: 12px;
 }
 
-.btn-primary {
-    background-color: #198754;
-    border: none;
+/* Accessible dark green for text */
+:root {
+    --primary-green: #0b3823;
+    --dark-green: #0c271a;
 }
 
+/* Solid button */
+.btn-primary {
+    background-color: var(--primary-green);
+    border: none;
+    color: white;
+}
+
+/* Outlined button – improved contrast */
 .btn-outline-primary {
-    border-color: #198754;
-    color: #198754;
+    border-color: var(--dark-green);
+    color: var(--dark-green);
 }
 
 .btn-outline-primary:hover {
-    background-color: #198754;
+    background-color: var(--dark-green);
     color: white;
 }
 
 /* Override Bootstrap .nav-pills */
 .nav-pills .nav-link {
-    color: #198754;
-    border: 1px solid #198754;
+    color: var(--dark-green);
+    border: 1px solid var(--dark-green);
     margin: 0 4px;
+    background-color: white;
 }
 
 .nav-pills .nav-link:hover {
-    background-color: #198754;
+    background-color: var(--dark-green);
     color: white;
 }
 
 .nav-pills .nav-link.active {
-    background-color: #198754;
+    background-color: var(--primary-green);
     color: white;
-    border-color: #198754;
+    border-color: var(--primary-green);
 }
-
 
 @media (max-width: 768px) {
     .newsImg {
