@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Food Wastage Calculator</title>
   
-  <!-- Link to your CSS file -->
-  <link rel="stylesheet" href="../css/main.css">
   <?php include('inc/head.inc.php'); ?>
-  <?php include('inc/nav.inc.php'); ?>
 </head>
 <body class="calc-bg">
-
+  <?php include('inc/nav.inc.php'); ?>
   <!-- Main container with two panels: left for the form and right for results -->
   <main class="calculator-container">
     <!-- LEFT PANEL: Calculator Form -->

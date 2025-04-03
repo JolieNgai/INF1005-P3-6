@@ -64,7 +64,8 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
                     <?php if (!empty($trendingArticles[0])): ?>
                     <div class="card border-0 mb-3 shadow-sm">
                         <img src="<?= $trendingArticles[0]["urlToImage"] ?? '../images/default.jpg'; ?>"
-                            class="card-img-top newsImg rounded-top" onerror="this.src='../images/default.jpg';">
+                            class="card-img-top newsImg rounded-top" onerror="this.src='../images/default.jpg';"
+                            alt="<?= htmlspecialchars($trendingArticles[0]['title'] ?? 'Trending article image') ?>">
                         <div class="card-body">
                             <h3 class="card-title"><?= htmlspecialchars($trendingArticles[0]["title"]); ?></h3>
                             <p class="card-text">
@@ -98,7 +99,8 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
                     <div class="col-md-6">
                         <div class="card h-100 shadow-sm rounded-4 overflow-hidden">
                             <img src="<?= $trendingArticles[$i]["urlToImage"] ?? '../images/default.jpg'; ?>"
-                                class="newsImg" onerror="this.src='../images/default.jpg';">
+                                class="newsImg" onerror="this.src='../images/default.jpg';"
+                                alt="<?= htmlspecialchars($trendingArticles[$i]["title"] ?? 'Trending article image'); ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= htmlspecialchars($trendingArticles[$i]["title"]); ?></h5>
                                 <p class="card-text">
@@ -145,7 +147,8 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
                             <div class="col-md-4">
                                 <img src="<?= $article["urlToImage"] ?? '../images/default.jpg'; ?>"
                                     class="img-fluid newsImg rounded-start" style="height: 100%; object-fit: cover;"
-                                    onerror="this.src='../images/default.jpg';">
+                                    onerror="this.src='../images/default.jpg';"
+                                    alt="<?= htmlspecialchars($article['title'] ?? 'Latest article image'); ?>">
                             </div>
                             <div class="col-md-8 d-flex flex-column">
                                 <div class="card-body d-flex flex-column justify-content-between">

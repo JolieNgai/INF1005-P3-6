@@ -16,8 +16,8 @@
     <section id="AboutUs">
     <h2>About Us</h2>
     <div class="row">
-    <article class="col-sm">
-
+    <div class="col-sm">
+    
     <p class="boxed-paragraph">
     Welcome to <strong>Food 4 Thought</strong>, 
     an educational platform dedicated to raising awareness about food shortages. <br>
@@ -26,18 +26,18 @@
     to encourage meaningful discussions and promote real-world change. <br>
     
     </p>
-    </article>
+    </div>
     </div>
     </section>
     <section id="Mission">
     <h2>Our Mission</h2>
     <div class="row">
-        <article class="col-sm">
+        <div class="col-sm">
             <p class = "boxed-paragraph">
             Our mission is to inform and inspire individuals to take action in preventing food shortages through sustainable practices,
             education, and community efforts.
             </p>
-        </article>
+        </div>
     </div>
 </section>
 
@@ -62,9 +62,9 @@
 </section>
 
     <section id="OurLocation&Contact">
+    <h3>Our Location</h3>
      <div class="row">
-        <article class="col-sm-6">
-            <h2>Our Location</h2>
+        <div class="col-sm-6">
         <!-- Google Maps -->
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6040067047534!2d103.9073801848792!3d1.41363575770499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da15ac1f854ff5%3A0x681080ba33c348ca!2sSingapore%20Institute%20of%20Technology%20(Campus%20Heart)!5e0!3m2!1sen!2ssg!4v1743255673171!5m2!1sen!2ssg" 
@@ -75,7 +75,7 @@
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-        </article>
+        </div>
 
         <article class="col-sm-6">
             <h2>Our Contact</h2>

@@ -70,8 +70,8 @@ session_start();
     <div class="row">
     <article class="col-sm">
     <figure class="fade-in">
-        <img src="/images/Food-shortage.jpg" class = "img-thumbnail" alt="Food shortage"
-        title="View larger image..." style="width: 50%; height: auto;"/>
+        <img src="/images/Food-shortage.jpg" class="img-thumbnail" alt="Food shortage"
+        title="View larger image..." style="width: 50%; height: auto;">
         
         <figcaption>Food Shortage</figcaption>
     </figure>
@@ -86,7 +86,7 @@ session_start();
     <div class="modal-content">
         <span class="close-btn">&times;</span>
         <div id="quiz1Container">
-            <h2 id="questionText"></h2> <!-- Question will be displayed here -->
+            <h2 id="questionText">Question</h2> <!-- Question will be displayed here -->
             <div id="answerButtons"></div> <!-- Answer buttons will be here -->
         </div>
         <div id="quiz1Result" style="display: none;">
@@ -99,7 +99,6 @@ session_start();
 
 <!-- Button to start Quiz 1 -->
 <button id="startQuiz1Btn" class="btn btn-primary QuizBtn">Test Your Knowledge!</button>
-    </p>
     </article>
     </div>
     </section>
@@ -166,8 +165,8 @@ session_start();
         <article class="col-sm">
 
         <figure class="fade-in">
-            <img src="/images/RecycleFood.jpg" class = "img-thumbnail"  alt="Recycling food"
-            title="View larger image..."  style="width: 50%; height: auto;" />
+            <img src="/images/RecycleFood.jpg" class="img-thumbnail"  alt="Recycling food"
+            title="View larger image..."  style="width: 50%; height: auto;">
 
             <figcaption>Recycling food</figcaption>
         </figure> 
@@ -205,7 +204,7 @@ session_start();
     <div class="modal-content">
         <span class="close-btn">&times;</span>
         <div id="quiz2Container">
-            <h2 id="questionText2"></h2> <!-- Question will be displayed here -->
+            <h2 id="questionText2">Question</h2> <!-- Question will be displayed here -->
             <div id="answerButtons2"></div> <!-- Answer buttons will be here -->
         </div>
         <div id="quiz2Result" style="display: none;">

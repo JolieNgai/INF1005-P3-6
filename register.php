@@ -1,4 +1,11 @@
-<?php include "inc/head.inc.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Member Register</title>
+    <?php include "inc/head.inc.php"; ?>
+</head>
+<body>
 <?php include "inc/nav.inc.php"; ?>
 
 <main class="container mt-5">
@@ -82,4 +89,5 @@
 
 <?php include "inc/footer.inc.php"; ?>
 </body>
+
 </html>
