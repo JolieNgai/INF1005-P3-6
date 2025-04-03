@@ -25,6 +25,14 @@ function fetchNews($category, $sortBy = 'publishedAt')
     curl_close($ch);
     $data = json_decode($response, true);
 
-    return $data["articles"] ?? ["error" => "No news found for {$category}."];
+    if (isset($data['articles']) && is_array($data['articles'])) {
+        return $data['articles'];
+    }
+    
+    // If there's an error or unexpected response, return it
+    return [
+        'error' => $data['message'] ?? "No news found for {$category}.",
+        'code' => $data['code'] ?? 'no_articles'
+    ];
 }
 ?>

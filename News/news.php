@@ -3,8 +3,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$apiErrorMessage;
-
 include "../inc/news/config.inc.php";
 include "../inc/news/fetch_news.inc.php";
 
@@ -20,7 +18,8 @@ $latestArticles = array_slice(fetchNews($currentCategory, 'publishedAt'), 0, 3);
 $allCategoriesArticles = [];
 foreach ($categories as $category) {
     $articles = fetchNews($category, 'popularity');
-    if (!empty($articles) && is_array($articles)) {
+    $error = isset($articles['error']) ? $articles['error'] : null;
+if (!empty($articles) && is_array($articles)) {
         $allCategoriesArticles = array_merge($allCategoriesArticles, $articles);
     }
 }
@@ -53,6 +52,9 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
     <?php include "../inc/header.inc.php"; ?>
 
     <div class="container semiTransparent">
+        <?php if ($error): ?>
+        <p><?= $error ?></p>
+        <?php else: ?>
         <div class="row gx-4">
             <div class="col-lg-8 col-12">
                 <?php include "../inc/news/navpill.inc.php"; ?>
@@ -185,6 +187,7 @@ $todaysPick = $allCategoriesArticles[0] ?? null;
                 <?php include "../inc/news/sidebar.inc.php"; ?>
             </div>
         </div>
+        <?php endif; ?>
     </div>
 
     <?php include "../inc/footer.inc.php"; ?>
