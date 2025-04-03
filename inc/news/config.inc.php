@@ -1,6 +1,20 @@
 <?php
 // NewsAPI Endpoint and API Key (Replace with your actual API key)
-$apiKey = "884687de23654c829bae2fc9c04050e1";
+//$apiKey = "";
+
+$envFile = dirname($_SERVER['DOCUMENT_ROOT']) . '/.env';
+
+if (file_exists($envFile)) {
+    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) continue; // Skip comments
+        list($key, $value) = explode('=', $line, 2);
+        putenv(trim($key) . '=' . trim($value));
+    }
+}
+
+$apiKey = getenv('NEWS_API_KEY');
+
 $apiBaseURL = "https://newsapi.org/v2/everything?q=";
 
 // Keyword variables
