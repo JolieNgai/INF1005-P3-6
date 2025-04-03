@@ -12,7 +12,7 @@
     <h1 class="mb-3">Join Our Community</h1>
     <p>
         For existing members, please go to the
-        <a href="login.php">Sign In page</a>.
+        <a href="login.php" style="color:#0a58ca;">Sign In page</a>.
     </p>
 
     <form action="process_register.php" method="post">

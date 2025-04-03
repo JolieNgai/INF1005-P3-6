@@ -13,7 +13,7 @@
         <h1>Member Login</h1>
         <p>
             Existing members log in here. For new members, please go to the
-            <a href="register.php">Member Registration page</a>.
+            <a href="register.php" style="color:#0a58ca" >Member Registration page</a>.
         </p>
 
         <form action="process_login.php" method="post">

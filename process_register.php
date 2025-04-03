@@ -115,7 +115,7 @@ if ($success) {
             <div class="alert alert-danger">
                 <?= nl2br($errorMsg); ?>
             </div>
-            <a href="register.php" class="btn btn-danger">Return to Sign Up</a>
+            <a href="register.php" style="color:#0a58ca" class="btn btn-danger">Return to Sign Up</a>
         <?php } else { ?>
             <h1 class="text-success">Your registration is successful!</h1>
             <p class="lead">Thank you for signing up, <?= htmlspecialchars($fname . " " . $lname); ?>.</p>

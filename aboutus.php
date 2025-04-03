@@ -74,6 +74,7 @@
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
+            title="Google Maps view of Singapore Institute of Technology (Campus Heart)">
         </iframe>
         </div>
 
